@@ -164,8 +164,8 @@ int main() {
         cout << "Enter your choice:";
         cin >> choice;
         switch (choice) {
-        case 1:
             int c;
+        case 1:
             cout << "Which polynomial you want to update (1 or 2):";
             cin >> c;
             switch (c) {
@@ -184,7 +184,6 @@ int main() {
             }
             break;
         case 2:
-            int c;
             cout << "Which polynomial you want to display (1 or 2 or 3(both)):";
             cin >> c;
             switch (c) {
