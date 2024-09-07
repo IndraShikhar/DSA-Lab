@@ -147,9 +147,10 @@ void displayNode(struct Node* head) {
 void displayMenu() {
     cout << "What do wanna do??" << endl;
     cout << "1.Update the polynomial." << endl;
-    cout << "2.Add both the polynomials." << endl;
-    cout << "3.Multiply both the polynomials." << endl;
-    cout << "4.QUIT" << endl;
+    cout << "2.Display polynomial" << endl;
+    cout << "3.Add both the polynomials." << endl;
+    cout << "4.Multiply both the polynomials." << endl;
+    cout << "5.QUIT" << endl;
 }
 
 int main() {
@@ -183,6 +184,29 @@ int main() {
             }
             break;
         case 2:
+            int c;
+            cout << "Which polynomial you want to display (1 or 2 or 3(both)):";
+            cin >> c;
+            switch (c) {
+            case 1:
+                cout << "Polynomial 1:" << endl;
+                displayNode(node1);
+                break;
+            case 2:
+                cout << "Polynomial 2:" << endl;
+                displayNode(node2);
+            case 3:
+                cout << "Polynomial 1:" << endl;
+                displayNode(node1);
+                cout << "Polynomial 2:" << endl;
+                displayNode(node2);
+                break;
+            default:
+                cout << "Invalid choice" << endl << "Exiting to Main menu..." << endl;
+                break;
+            }
+            break;
+        case 3:
             cout << "Polynomial 1:" << endl;
             displayNode(node1);
             cout << "Polynomial 2:" << endl;
@@ -191,7 +215,7 @@ int main() {
             cout << "Result:" << endl;
             displayNode(result);
             break;
-        case 3:
+        case 4:
             cout << "Polynomial 1:" << endl;
             displayNode(node1);
             cout << "Polynomial 2:" << endl;
@@ -200,7 +224,7 @@ int main() {
             cout << "Result:" << endl;
             displayNode(result);
             break;
-        case 4:
+        case 5:
             cout << "Quiting ...." << endl;
             break;
         default:
@@ -208,7 +232,7 @@ int main() {
             break;
         }
         deleteNode(result);
-    } while (choice != 4);
+    } while (choice != 5);
 
     getchar();
     getchar();
