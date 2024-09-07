@@ -81,7 +81,8 @@ void displayNode(struct Node* head) {
                 break;
             else {
                 head = head->next;
-                cout << "+";
+                if (head->next->coef >= 0)
+                    cout << "+";
             }
         }
         cout << endl;
