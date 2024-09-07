@@ -114,10 +114,10 @@ void update(struct Node*& node) {
     deleteNode(node);
     char c;
     do {
-        cout << "Enter the coefficient of the term";
+        cout << "Enter the coefficient of the term:";
         int a;
         cin >> a;
-        cout << "Enter the power of x in the term";
+        cout << "Enter the power of x in the term:";
         int b;
         cin >> b;
         cout << "Is there any other term(y/n):";
@@ -137,8 +137,7 @@ void displayNode(struct Node* head) {
                 break;
             else {
                 head = head->next;
-                if (head->next->coef >= 0)
-                    cout << "+";
+                cout << "+";
             }
         }
         cout << endl;
@@ -147,16 +146,19 @@ void displayNode(struct Node* head) {
 
 void displayMenu() {
     cout << "What do wanna do??" << endl;
-    cout << "1.Update the polynomial" << endl;
-    cout << "2.Add both the polynomials" << endl;
-    cout << "3.Multiply both the polynomials" << endl;
+    cout << "1.Update the polynomial." << endl;
+    cout << "2.Add both the polynomials." << endl;
+    cout << "3.Multiply both the polynomials." << endl;
     cout << "4.QUIT" << endl;
 }
 
 int main() {
     struct Node* node1 = nullptr, * node2 = nullptr, * result;
     int choice;
+    insert(node1, 0, 0);
+    insert(node2, 0, 0);
     do {
+        result = nullptr;
         displayMenu();
         cout << "Enter your choice:";
         cin >> choice;
@@ -208,6 +210,7 @@ int main() {
         deleteNode(result);
     } while (choice != 4);
 
+    getchar();
     getchar();
     return 0;
 }
